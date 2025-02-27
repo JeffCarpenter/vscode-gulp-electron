@@ -18,7 +18,7 @@ function getOriginalAppFullName(opts) {
 }
 
 function getSignTool() {
-  let windowsSDKDir= "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\";
+  let windowsSDKDir = process.env.WINDOWS_SDK_ROOT || "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\";
   if (!fs.existsSync(windowsSDKDir)) {
     throw `There is no Windows 10 SDK installed at ${windowsSDKDir}.`;
   }
